@@ -81,8 +81,7 @@
     git push -u origin main
 
     git add README.md
-    git commit -m "authreg"
-    git branch -M main
-    git remote add origin https://github.com/vannessambithe/newactivity.git
-    git push -u origin main
-    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
+
+
+
+
