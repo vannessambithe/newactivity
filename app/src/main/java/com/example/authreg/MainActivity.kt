@@ -64,7 +64,6 @@ class MainActivity : AppCompatActivity() {
 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
 
 git add README.md
-git commit -m "login"
-git branch -M main
-git remote add origin https://github.com/vannessambithe/login.git
-git push -u origin main
+
+
+
