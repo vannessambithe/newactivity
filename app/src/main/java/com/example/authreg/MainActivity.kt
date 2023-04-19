@@ -1,6 +1,7 @@
 package com.example.authreg
 
 import android.content.Context
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var edt_email:EditText
     private lateinit var edt_password:EditText
     private lateinit var btn_create:Button
+    private lateinit var btn_login:Button
     private lateinit var db: SQLiteDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,15 +24,16 @@ class MainActivity : AppCompatActivity() {
         edt_name = findViewById(R.id.edtname)
         edt_second = findViewById(R.id.edtsecond)
         edt_email = findViewById(R.id.edtemail)
-        edt_password = findViewById(R.id.edtpassword)
+        edt_password = findViewById(R.id.edt_pass)
         btn_create = findViewById(R.id.btncreate)
+        btn_login = findViewById(R.id.btnlogin)
 
-        db = openOrCreateDatabase("emobilisvee", Context.MODE_PRIVATE, null)
+        db = openOrCreateDatabase("emobilisvannessa", Context.MODE_PRIVATE, null)
 
         db.execSQL("CREATE TABLE IF NOT EXISTS users( kwanza VARCHAR, pili VARCHAR, arafa VARCHAR, nenosiri VARCHAR)")
 
 
-        btn_create.setOnClickListener {
+        btn_login.setOnClickListener {
             var kwanza_edt = edt_name.text.toString().trim()
             var pili_edt = edt_second.text.toString().trim()
             var arafa_edt = edt_email.text.toString().trim()
@@ -42,8 +45,26 @@ class MainActivity : AppCompatActivity() {
                 db.execSQL("INSERT INTO users VALUES( '\"+kwanza_edt+\"', '\"+pili_edt+\"', '\"+arafa_edt+\"', '\"+nenosiri_edt+\"')")
                 Toast.makeText(this, "Successfully created user", Toast.LENGTH_SHORT).show()
 
+                var gotologin = Intent(this, login:: class.java)
+                startActivity(gotologin)
 
             }
         }
+
+        btn_create.setOnClickListener {
+
+            var gotoregister = Intent( this, MainActivity:: class.java)
+            startActivity(gotoregister)
+
+        }
+
+
     }
 }
+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
+
+git add README.md
+git commit -m "login"
+git branch -M main
+git remote add origin https://github.com/vannessambithe/login.git
+git push -u origin main

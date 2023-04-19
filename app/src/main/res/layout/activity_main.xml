@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edtsecond" />
 
     <EditText
-        android:id="@+id/editTextNumberPassword"
+        android:id="@+id/edt_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
@@ -68,15 +68,22 @@
         android:layout_marginEnd="95dp"
         android:text="Create Account"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edtemail"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_pass" />
+
+    <Button
+        android:id="@+id/btnlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="37dp"
+        android:hint="Login"
+        app:layout_constraintEnd_toEndOf="@+id/btncreate"
+        app:layout_constraintTop_toBottomOf="@+id/btncreate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-    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
 
-    git add README.md
-    git commit -m "first commit"
-    git branch -M main
-    git remote add origin https://github.com/vannessambithe/assignment.git
-    git push -u origin main
+
+
+
+
